@@ -9,30 +9,30 @@ class CreateOffersTable extends AbstractMigration
     {
         $table = $this->table('offers');
         $table->addColumn('offer_id', 'integer', [
-            'null' => false,
+            'null' => true,
         ]);
         $table->addColumn('name', 'string', [
-            'null' => false,
+            'null' => true,
         ]);
         $table->addColumn('anchor', 'string', [
             'null' => true,
         ]);
-        $table->addColumn('requirements', 'string', [
+        $table->addColumn('requirements', 'text', [
             'null' => true,
         ]);
-        $table->addColumn('offer_desc', 'string', [
+        $table->addColumn('offer_desc', 'text', [
             'null' => true,
         ]);
         $table->addColumn('ecpc', 'string', [
             'null' => true,
         ]);
-        $table->addColumn('click_url', 'string', [
+        $table->addColumn('click_url', 'text', [
             'null' => true,
         ]);
-        $table->addColumn('support_url', 'string', [
+        $table->addColumn('support_url', 'text', [
             'null' => true,
         ]);
-        $table->addColumn('preview_url', 'string', [
+        $table->addColumn('preview_url', 'text', [
             'null' => true,
         ]);
         $table->addPrimaryKey('id');
