@@ -54,7 +54,18 @@
 
 <script>
     $(document).ready(function() {
-        $('#offersTable').DataTable();
+        $('#offersTable').DataTable({
+            "columnDefs": [
+                {
+                    "targets": [3], // Index of the "ECPC" column (zero-based)
+                    "orderable": true // Enable sorting for this column
+                },
+                {
+                    "targets": "_all", // Disable sorting for all other columns
+                    "orderable": false
+                }
+            ]
+        });
 
         $.fn.dataTable.ext.search.push(
             function(settings, searchData, index, rowData, counter) {
