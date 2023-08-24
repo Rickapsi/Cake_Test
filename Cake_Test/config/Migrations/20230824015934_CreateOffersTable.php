@@ -5,20 +5,12 @@ use Migrations\AbstractMigration;
 
 class CreateOffersTable extends AbstractMigration
 {
-    /**
-     * Change Method.
-     *
-     * More information on this method is available here:
-     * https://book.cakephp.org/phinx/0/en/migrations.html#the-change-method
-     * @return void
-     */
     public function change(): void
     {
         $table = $this->table('offers');
         $table->addColumn('offer_id', 'integer', [
             'null' => false,
         ]);
-        $table->addPrimaryKey('id');
         $table->addColumn('name', 'string', [
             'null' => false,
         ]);
@@ -43,6 +35,7 @@ class CreateOffersTable extends AbstractMigration
         $table->addColumn('preview_url', 'string', [
             'null' => true,
         ]);
+        $table->addPrimaryKey('id');
         $table->create();
     }
 }
